@@ -74,5 +74,3 @@ CertificationRouter.delete("/delete-certification/:id", async (req, res) => {
 });
 
 module.exports = CertificationRouter;
-
-
