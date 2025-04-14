@@ -2,17 +2,18 @@ const express = require("express");
 const CertificationRouter = express.Router();
 const Certification = require("../models/certification");
 const Workshop = require("../models/workshop");
-
+const Education = require("../models/education");
 // Get all certifications Details
 // Get all workshops Details inside the same route
 CertificationRouter.get("/get-certifications", async (req, res) => {
     try {
         const certifications = await Certification.find();
         const workshops = await Workshop.find();
+        const education = await Education.find();
         res.status(200).json({
             success: true,
             message: "Certificates fetched successfully",
-            data: { certifications, workshops }
+            data: { certifications, workshops, education }
         });
     } catch (error) {
         res.status(500).json({
