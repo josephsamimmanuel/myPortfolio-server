@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3000" || "https://josesamimmanuels.netlify.app/",
     credentials: true,
 }));
 app.use(express.json());
