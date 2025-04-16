@@ -8,14 +8,10 @@ projectRouter.get("/get-projects", async (req, res) => {
         const projects = await Project.find();
         console.log(projects);
         // get all frontEnd and BackEnd Data when role is frontEnd or backEnd
-        const frontEndProjects = projects.filter(project => project.data?.role === "frontEnd");
-        const backEndProjects = projects.filter(project => project.data?.role === "backEnd");
         res.status(200).json({
             message: "Projects fetched successfully",
             data: {
                 projects,
-                frontEndProjects: frontEndProjects.map(project => project.data),
-                backEndProjects: backEndProjects.map(project => project.data)
             }
         });
     } catch (error) {
@@ -39,7 +35,7 @@ projectRouter.post("/add-project", async (req, res) => {
 });
 
 // update a project
-projectRouter.put("/update-project/:id", async (req, res) => {
+projectRouter.patch("/update-project/:id", async (req, res) => {
     try {
         const project = await Project.findByIdAndUpdate(req.params.id, req.body, { new: true });
         res.status(200).json({ message: "Project updated successfully", data: project });
