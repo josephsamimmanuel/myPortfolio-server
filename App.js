@@ -8,6 +8,7 @@ const workshopRouter = require("./Routes/workshopRoute");
 const ContactRouter = require("./Routes/contactRoute");
 const educationRouter = require("./Routes/educationRoutes");
 const projectRouter = require("./Routes/projectRoutes");
+const necessaryLinksRouter = require("./Routes/necessaryLinksRoutes");
 dotenv.config();
 
 const app = express();
@@ -32,6 +33,7 @@ app.use("/", workshopRouter);
 app.use("/", ContactRouter);
 app.use("/", educationRouter);
 app.use("/", projectRouter);
+app.use("/", necessaryLinksRouter);
 connectDB().then(() => {
     app.listen(process.env.PORT, () => {
         console.log(`Server is running on port ${PORT}`);
