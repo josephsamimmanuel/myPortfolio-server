@@ -16,7 +16,7 @@ const PORT = process.env.PORT;
 
 app.use(cors({
     // origin: "https://josesamimmanuels.netlify.app",
-    origin: ["http://localhost:3000", "https://josephsamimmanuel.co.in"],
+    origin: ["http://localhost:3000", "https://my-portfolio-e92b.vercel.app"],
     credentials: true,
 }));
 
