@@ -17,6 +17,8 @@ const PORT = process.env.PORT;
 app.use(cors({
     // origin: "https://josesamimmanuels.netlify.app",
     origin: ["http://localhost:3000", "https://my-portfolio-e92b.vercel.app"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
 }));
 
@@ -34,6 +36,7 @@ app.use("/", ContactRouter);
 app.use("/", educationRouter);
 app.use("/", projectRouter);
 app.use("/", necessaryLinksRouter);
+
 connectDB().then(() => {
     app.listen(process.env.PORT, () => {
         console.log(`Server is running on port ${PORT}`);
