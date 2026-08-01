@@ -16,7 +16,7 @@ const PORT = process.env.PORT;
 
 app.use(cors({
     // origin: "https://josesamimmanuels.netlify.app",
-    origin: ["http://localhost:3000", "https://my-portfolio-e92b.vercel.app"],
+    origin: ["http://localhost:3000", "https://portfolio-c92eb.web.app"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
